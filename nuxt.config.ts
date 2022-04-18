@@ -2,24 +2,23 @@ import { defineNuxtConfig } from 'nuxt3'
 
 // https://v3.nuxtjs.org/docs/directory-structure/nuxt.config
 export default defineNuxtConfig({
-  srcDir: './client',
   app: {
     head: {
       htmlAttrs: {
         lang: 'en'
       },
-      title: 'Michael Gale is a web developer from Melbourne, Australia',
+      title: 'Michael Gale',
       meta: [{
+          hid: 'description',
+          name: 'description',
+          content: 'The web developer from Melbourne, Australia'
+        },
+        {
           charset: 'utf-8'
         },
         {
           name: 'viewport',
           content: 'width=device-width, initial-scale=1'
-        },
-        {
-          hid: 'description',
-          name: 'description',
-          content: 'The trials and tribulations of your local village idiot'
         },
         {
           name: 'msapplication-TileColor',
@@ -77,5 +76,6 @@ export default defineNuxtConfig({
         },
       ],
     },
-  }
+  },
+  srcDir: './client'
 })
