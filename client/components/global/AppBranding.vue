@@ -1,5 +1,7 @@
 <script lang="ts" setup>
-defineProps<{ zIndex?: number }>()
+withDefaults(defineProps<{ zIndex?: number }>(), {
+  zIndex: 3
+})
 </script>
 
 <template>
@@ -15,7 +17,7 @@ defineProps<{ zIndex?: number }>()
 
 <style>
 .logo {
-  /* https://vuejs.org/api/sfc-css-features.html#v-bind-in-css */
   z-index: v-bind(zIndex);
+  position: relative;
 }
 </style>
