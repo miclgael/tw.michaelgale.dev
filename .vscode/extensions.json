@@ -1,0 +1,13 @@
+{
+  "recommendations": [
+    "johnsoncodehk.volar",
+    "bradlc.vscode-tailwindcss",
+    "stylelint.vscode-stylelint",
+    "sdras.vue-vscode-snippets",
+    "antfu.unocss",
+    "jeremyljackson.vs-docblock"
+  ],
+  "unwantedRecommendations": [
+    "octref.vetur"
+  ]
+}

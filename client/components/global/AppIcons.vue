@@ -1,3 +1,3 @@
 <template>
-  <div aria-hidden="true"></div>
+  <div aria-hidden="true" />
 </template>
