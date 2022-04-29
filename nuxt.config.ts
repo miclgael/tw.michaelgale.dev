@@ -78,7 +78,45 @@ export default defineNuxtConfig({
     }
   },
   buildModules: [
-    '@nuxtjs/eslint-module'
+    '@nuxtjs/eslint-module',
+    '@unocss/nuxt'
   ],
-  srcDir: './client'
+  srcDir: './client',
+  css: [
+    '@unocss/reset/tailwind.css'
+  ],
+  unocss: {
+    shortcuts: {
+      inside: `
+        p-l
+        p-r
+        max-w-screen-2xl
+        m-auto
+      `,
+      'site-content': `
+        min-h-xl
+      `,
+      logo: `
+        bg-black/90
+        inline-flex
+        text-2xl
+        italic
+        whitespace-no-wrap
+        text-white
+        relative
+        before:absolute
+        before:top-0
+        before:right-0
+        before:bottom-0
+        before:left-0
+        before:opacity-0
+        before:gradient-fill
+        hover:before:opacity-100
+      `
+    },
+    rules: [
+      ['plex-mono', { 'font-family': '\'IBM Plex Mono\', monospace', 'font-weight': 'normal' }],
+      ['gradient-fill', { 'background-image': 'linear-gradient(to right, rgb(74, 95, 226), #0ff)' }]
+    ]
+  }
 })

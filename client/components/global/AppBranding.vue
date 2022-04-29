@@ -15,9 +15,33 @@ withDefaults(defineProps<{ zIndex?: number }>(), {
   </div>
 </template>
 
-<style>
+<style scoped>
 .logo {
   z-index: v-bind(zIndex);
-  position: relative;
+}
+.logo:hover {
+  text-shadow: 1px 1px 1px #4d4d4d;
+}
+.logo:before {
+  content: '';
+  z-index: -1;
+  transition: opacity 0.3s;
+}
+/* Visually reads as: "{MG}" */
+.logo a > span {
+  width: 16px;
+  overflow: hidden;
+}
+/* Visually reads as: "{MichaelGale}" */
+@media screen and (min-width: 465px) {
+  .logo a > span {
+    width: auto;
+    overflow: unset;
+  }
+}
+
+/* Render the "{" and "}", but not as text-nodes */
+[data-brace]:before {
+  content: attr(data-brace);
 }
 </style>
