@@ -1,5 +1,5 @@
 <script lang="ts" setup>
-withDefaults(defineProps<{ zIndex: number }>(), {
+withDefaults(defineProps<{ zIndex?: number }>(), {
   zIndex: 3
 })
 </script>
