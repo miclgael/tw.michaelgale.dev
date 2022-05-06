@@ -15,9 +15,25 @@ withDefaults(defineProps<{ zIndex?: number }>(), {
   </div>
 </template>
 
-<style scoped>
+<style lang="postcss" scoped>
 .logo {
   z-index: v-bind(zIndex);
+  @apply:
+    bg-black/90
+    inline-flex
+    text-2xl
+    italic
+    whitespace-no-wrap
+    text-white
+    relative
+    before:absolute
+    before:top-0
+    before:right-0
+    before:bottom-0
+    before:left-0
+    before:opacity-0
+    before:gradient-fill
+    hover:before:opacity-100;
 }
 .logo:hover {
   text-shadow: 1px 1px 1px #4d4d4d;
