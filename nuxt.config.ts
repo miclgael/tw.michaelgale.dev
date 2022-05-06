@@ -110,6 +110,11 @@ export default defineNuxtConfig({
       // Force transformer to expand `@apply` before passing to other preprocessors
       // https://github.com/unocss/unocss/issues/809#issuecomment-1118632177
       transformerDirective({ enforce: 'pre' })
-    ]
+    ],
+    theme: {
+      breakpoints: {
+        xs: '428px'
+      }
+    }
   }
 })

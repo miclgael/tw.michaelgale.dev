@@ -5,7 +5,7 @@ withDefaults(defineProps<{ zIndex?: number }>(), {
 </script>
 
 <template>
-  <div class="logo plex-mono">
+  <div class="logo">
     <span aria-hidden="true" data-brace="{" />
     <nuxt-link to="/" class="inline-flex text-white no-underline">
       <span>Michael</span>
@@ -26,34 +26,29 @@ withDefaults(defineProps<{ zIndex?: number }>(), {
     whitespace-no-wrap
     text-white
     relative
+    plex-mono
+    before:-z-1
     before:absolute
+    before:content-none
     before:top-0
     before:right-0
     before:bottom-0
     before:left-0
     before:opacity-0
+    before:transition-opacity
+    before:duration-300
     before:gradient-fill
-    hover:before:opacity-100;
+    hover:before:opacity-100
+    hover:[text-shadow:1px_1px_1px_#4d4d4d];
 }
-.logo:hover {
-  text-shadow: 1px 1px 1px #4d4d4d;
-}
-.logo:before {
-  content: '';
-  z-index: -1;
-  transition: opacity 0.3s;
-}
-/* Visually reads as: "{MG}" */
+
+/* Responsive logo */
 .logo a > span {
-  width: 16px;
-  overflow: hidden;
-}
-/* Visually reads as: "{MichaelGale}" */
-@media screen and (min-width: 465px) {
-  .logo a > span {
-    width: auto;
-    overflow: unset;
-  }
+  @apply
+    w-4
+    overflow-hidden
+    xs:w-auto
+    xs:overflow-auto;
 }
 
 /* Render the "{" and "}", but not as text-nodes */
