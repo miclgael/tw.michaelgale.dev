@@ -88,9 +88,12 @@ export default defineNuxtConfig({
     '@unocss/reset/tailwind.css'
   ],
   unocss: {
-    uno: true, // enabled `@unocss/preset-uno`
-    icons: true, // enabled `@unocss/preset-icons`
-    attributify: true, // enabled `@unocss/preset-attributify`
+    // enabled `@unocss/preset-uno`
+    uno: true,
+    // enabled `@unocss/preset-icons`
+    icons: true,
+    // enabled `@unocss/preset-attributify`
+    attributify: true,
     shortcuts: {
       inside: `
         p-l
