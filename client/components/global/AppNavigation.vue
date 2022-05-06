@@ -5,5 +5,3 @@
     Component: global/AppNavigation
   </div>
 </template>
-
-<style scoped></style>
