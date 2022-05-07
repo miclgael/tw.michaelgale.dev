@@ -91,9 +91,9 @@ export default defineNuxtConfig({
     // enabled `@unocss/preset-uno`
     uno: true,
     // enabled `@unocss/preset-icons`
-    icons: true,
+    icons: false,
     // enabled `@unocss/preset-attributify`
-    attributify: true,
+    attributify: false,
     shortcuts: {
       inside: `
         p-l
@@ -116,7 +116,16 @@ export default defineNuxtConfig({
     ],
     theme: {
       breakpoints: {
-        xs: '428px'
+        // custom xs
+        xs: '428px',
+        // defaults
+        sm: '640px',
+        md: '768px',
+        lg: '1024px',
+        xl: '1280px',
+        '2xl': '1536px',
+        // custom 3xl
+        '3xl': '1600px'
       }
     }
   }
