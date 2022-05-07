@@ -81,7 +81,11 @@ export default defineNuxtConfig({
   buildModules: [
     '@nuxtjs/eslint-module',
     '@unocss/nuxt',
-    '@unocss/transformer-directives'
+    '@unocss/transformer-directives',
+    ['unplugin-icons/nuxt', {
+      // experimental
+      autoInstall: true
+    }]
   ],
   srcDir: './client',
   css: [
@@ -107,6 +111,7 @@ export default defineNuxtConfig({
     },
     rules: [
       ['plex-mono', { 'font-family': '\'IBM Plex Mono\', monospace', 'font-weight': 'normal' }],
+      ['fira-sans', { 'font-family': '\'Fira Sans\', sans-serif', 'font-weight': '400' }],
       ['gradient-fill', { 'background-image': 'linear-gradient(to right, rgb(74, 95, 226), #0ff)' }]
     ],
     transformers: [

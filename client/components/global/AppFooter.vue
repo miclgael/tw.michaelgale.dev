@@ -94,14 +94,40 @@
         </div>
       </div>
     </div>
+    <div>
+      <ul class="inline-list" role="list">
+        <li role="listitem">
+          <a href="https://codepen.io/miclgael">
+            <icon-codepen class="icon" />
+          </a>
+        </li>
+        <li role="listitem">
+          <a href="https://linkedin.com/in/miclgael">
+            <icon-linkedin class="icon" />
+          </a>
+        </li>
+        <li role="listitem">
+          <a href="https://twitter.com/miclgael">
+            <icon-twitter class="icon" />
+          </a>
+        </li>
+      </ul>
+    </div>
 
     <p>Michael has been deving for ______ years!</p>
   </footer>
 </template>
 
 <script>
-// import { mapState } from 'vuex'
+import IconTwitter from '~icons/icomoon-free/twitter'
+import IconCodepen from '~icons/icomoon-free/codepen'
+import IconLinkedin from '~icons/icomoon-free/linkedin'
 export default {
+  components: {
+    IconTwitter,
+    IconCodepen,
+    IconLinkedin
+  },
   // computed: {
   //   ...mapState(['globalDeveloperYears'])
   // },
@@ -141,7 +167,7 @@ export default {
     md:col-end-4
   ;
 }
-ul li {
+.footer-subgrid ul li {
   @apply m-y-5 first:m-t-10;
 }
 
@@ -150,11 +176,16 @@ ul li {
     flex
     flex-row
     gap-12
+    p0
+    list-none
 }
-.inline-list li {
+/* .inline-list li {
   @apply m0;
-}
+} */
 p {
   @apply my-8;
+}
+.icon {
+  @apply w-6 h-6;
 }
 </style>
