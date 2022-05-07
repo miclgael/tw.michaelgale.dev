@@ -3,7 +3,6 @@
     <global-app-header />
     <slot />
     <global-app-footer />
-    <global-app-icons />
   </main>
 </template>
 
