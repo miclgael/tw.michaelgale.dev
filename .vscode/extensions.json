@@ -5,7 +5,8 @@
     "stylelint.vscode-stylelint",
     "sdras.vue-vscode-snippets",
     "antfu.unocss",
-    "jeremyljackson.vs-docblock"
+    "jeremyljackson.vs-docblock",
+    "cpylua.language-postcss"
   ],
   "unwantedRecommendations": [
     "octref.vetur"

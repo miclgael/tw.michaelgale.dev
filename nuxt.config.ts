@@ -1,4 +1,5 @@
 import { defineNuxtConfig } from 'nuxt3'
+import transformerDirective from '@unocss/transformer-directives'
 
 // https://v3.nuxtjs.org/docs/directory-structure/nuxt.config
 export default defineNuxtConfig({
@@ -79,13 +80,24 @@ export default defineNuxtConfig({
   },
   buildModules: [
     '@nuxtjs/eslint-module',
-    '@unocss/nuxt'
+    '@unocss/nuxt',
+    '@unocss/transformer-directives',
+    ['unplugin-icons/nuxt', {
+      // experimental
+      autoInstall: true
+    }]
   ],
   srcDir: './client',
   css: [
     '@unocss/reset/tailwind.css'
   ],
   unocss: {
+    // enabled `@unocss/preset-uno`
+    uno: true,
+    // enabled `@unocss/preset-icons`
+    icons: false,
+    // enabled `@unocss/preset-attributify`
+    attributify: false,
     shortcuts: {
       inside: `
         p-l
@@ -95,28 +107,31 @@ export default defineNuxtConfig({
       `,
       'site-content': `
         min-h-xl
-      `,
-      logo: `
-        bg-black/90
-        inline-flex
-        text-2xl
-        italic
-        whitespace-no-wrap
-        text-white
-        relative
-        before:absolute
-        before:top-0
-        before:right-0
-        before:bottom-0
-        before:left-0
-        before:opacity-0
-        before:gradient-fill
-        hover:before:opacity-100
       `
     },
     rules: [
       ['plex-mono', { 'font-family': '\'IBM Plex Mono\', monospace', 'font-weight': 'normal' }],
+      ['fira-sans', { 'font-family': '\'Fira Sans\', sans-serif', 'font-weight': '400' }],
       ['gradient-fill', { 'background-image': 'linear-gradient(to right, rgb(74, 95, 226), #0ff)' }]
-    ]
+    ],
+    transformers: [
+      // Force transformer to expand `@apply` before passing to other preprocessors
+      // https://github.com/unocss/unocss/issues/809#issuecomment-1118632177
+      transformerDirective({ enforce: 'pre' })
+    ],
+    theme: {
+      breakpoints: {
+        // custom xs
+        xs: '428px',
+        // defaults
+        sm: '640px',
+        md: '768px',
+        lg: '1024px',
+        xl: '1280px',
+        '2xl': '1536px',
+        // custom 3xl
+        '3xl': '1600px'
+      }
+    }
   }
 })

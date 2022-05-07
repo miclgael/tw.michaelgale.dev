@@ -1,5 +1,3 @@
-<script lang="ts" setup></script>
-
 <template>
   <header>
     <div>
@@ -8,5 +6,3 @@
     </div>
   </header>
 </template>
-
-<style scoped></style>
