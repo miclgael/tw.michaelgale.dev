@@ -81,7 +81,11 @@ export default defineNuxtConfig({
   buildModules: [
     '@nuxtjs/eslint-module',
     '@unocss/nuxt',
-    '@unocss/transformer-directives'
+    '@unocss/transformer-directives',
+    ['unplugin-icons/nuxt', {
+      // experimental
+      autoInstall: true
+    }]
   ],
   srcDir: './client',
   css: [
@@ -91,9 +95,9 @@ export default defineNuxtConfig({
     // enabled `@unocss/preset-uno`
     uno: true,
     // enabled `@unocss/preset-icons`
-    icons: true,
+    icons: false,
     // enabled `@unocss/preset-attributify`
-    attributify: true,
+    attributify: false,
     shortcuts: {
       inside: `
         p-l
@@ -107,6 +111,7 @@ export default defineNuxtConfig({
     },
     rules: [
       ['plex-mono', { 'font-family': '\'IBM Plex Mono\', monospace', 'font-weight': 'normal' }],
+      ['fira-sans', { 'font-family': '\'Fira Sans\', sans-serif', 'font-weight': '400' }],
       ['gradient-fill', { 'background-image': 'linear-gradient(to right, rgb(74, 95, 226), #0ff)' }]
     ],
     transformers: [
@@ -116,7 +121,16 @@ export default defineNuxtConfig({
     ],
     theme: {
       breakpoints: {
-        xs: '428px'
+        // custom xs
+        xs: '428px',
+        // defaults
+        sm: '640px',
+        md: '768px',
+        lg: '1024px',
+        xl: '1280px',
+        '2xl': '1536px',
+        // custom 3xl
+        '3xl': '1600px'
       }
     }
   }
