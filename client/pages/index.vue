@@ -1,9 +1,7 @@
 <script lang="ts" setup></script>
 
 <template>
-  <section>
-    <h1>Hi, my name is Michael</h1>
-  </section>
+  <h1>Hi, my name is Michael</h1>
 </template>
 
 <script>
