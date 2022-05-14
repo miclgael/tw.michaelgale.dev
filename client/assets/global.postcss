@@ -1,3 +1,4 @@
+/* Document */
 html {
   @apply fira-sans;
   font-size: 16px;
@@ -9,6 +10,7 @@ html {
   box-sizing: border-box;
 }
 
+/* Links */
 a:not(.logo__link) {
   @apply underline;
 }
@@ -23,7 +25,7 @@ a:not(.logo__link):hover {
   -moz-text-fill-color: transparent;
 }
 
-
+/* a11y Helpers */
 .skip-link {
   white-space: nowrap;
   top: 0;
@@ -33,11 +35,20 @@ a:not(.logo__link):hover {
   opacity: 0;
 }
 
+/* Lists */
 .inline-list {
   @apply
     flex
     flex-row
-    gap-12
+    gap-7
     p0
     list-none;
+}
+
+/* Icons */
+.icon {
+  @apply w-6 h-6;
+}
+.icon--inline {
+  @apply inline-block m-r-4;
 }
