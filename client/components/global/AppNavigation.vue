@@ -22,7 +22,6 @@ const links:any = useNavigation()
   white-space: nowrap;
   font-family: "Fira Sans", sans-serif;
   font-size: 1.125rem;
-  /* height: 20px; */
   color: #4a5fe2;
   background-color: #fcfafa;
   letter-spacing: 0;
