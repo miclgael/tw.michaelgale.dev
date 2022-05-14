@@ -92,10 +92,5 @@ export default {
 :deep(p) {
   @apply m-y-5 first:m-t-0;
 }
-.icon {
-  @apply w-6 h-6;
-}
-.icon--inline {
-  @apply inline-block m-r-4;
-}
+
 </style>
