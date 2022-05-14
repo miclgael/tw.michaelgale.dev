@@ -4,8 +4,7 @@ export default function () {
     main: [
       { url: '/portfolio', label: 'Portfolio' },
       { url: '/resume', label: 'Resumé' },
-      { url: '/projects', label: 'Projects' },
-      { url: '/about', label: 'About' },
+      { url: '/blog', label: 'Blog' },
       { url: '/contact', label: 'Get in Contact', cta: true }
     ],
     footer: {

@@ -5,7 +5,15 @@ const links:any = useNavigation()
 <template>
   <nav class="flex items-center w-100%">
     <ul role="list" class="inline-list justify-start w-100%">
-      <li v-for="(link, index) in links.main" :key="`link--${index}`" role="listitem" :class="{'list-item--cta': !!link.cta}">
+      <li
+        v-for="(link, index) in links.main"
+        :key="`link--${index}`"
+        role="listitem"
+        :class="{
+          'hidden md:block': !(!!link.cta),
+          'list-item--cta': !!link.cta
+        }"
+      >
         <nuxt-link :to="link.url" :class="{'link--cta': !!link.cta}">
           {{ link.label }}
         </nuxt-link>
