@@ -1,31 +1,15 @@
 <script>
-import IconTwitter from '~icons/icomoon-free/twitter'
-import IconCodepen from '~icons/icomoon-free/codepen'
-import IconLinkedin from '~icons/icomoon-free/linkedin'
 import IconInfo from '~icons/icomoon-free/info'
 
 export default {
   components: {
-    IconTwitter,
-    IconCodepen,
-    IconLinkedin,
     IconInfo
   },
   setup () {
     const links = useNavigation()
+    const content = useContent()
     const global = useGlobalStore()
-    return { links, global }
-  },
-  methods: {
-    getYearQuarter () {
-      const date = new Date()
-      const month = date.getMonth() + 1
-      const now = Math.ceil(month / 3)
-      return {
-        now,
-        next: now + 1 >= 4 ? 1 : now + 1
-      }
-    }
+    return { links, content, global }
   }
 }
 </script>
@@ -36,71 +20,39 @@ export default {
     </div>
     <div class="inside">
       <div class="footer-grid">
-        <div>
-          <p>
-            An award-winning full-stack web developer focused on making things
-            fast, resilient and inclusive.
-          </p>
-          <p>
-            I'm a computer-science hobbyist, part-time musician and proud
-            co-parent to two adorable kittens
-            <span class="text-sm">(Mow-mow and Little Moose 💕).</span>
-          </p>
-
+        <div class="footer-blurb">
+          <!-- eslint-disable vue/no-v-html -->
+          <div v-html="content.footer" />
           <p>
             If you want to work together - cool! Unfortunately, I'm all booked out
-            for Q{{ getYearQuarter().now }}, but I am accepting
+            for Q{{ global.yearQuarter.now }}, but I am accepting
             <nuxt-link to="/contact">
               <span>expressions of interest</span>
-            </nuxt-link> for Q{{
-              getYearQuarter().next
-            }}
+            </nuxt-link> for Q{{ global.yearQuarter.next }}
           </p>
         </div>
         <div
           class="footer-subgrid"
         >
           <div class="w-100%">
-            <h3 class="uppercase">
-              Highlights
-            </h3>
-            <ul role="list" class="p-0 list-none">
-              <li v-for="(link, index) in links.footer.highlights" :key="`footer-link--${index}`" role="listitem">
-                <nuxt-link
-                  text-white
-                  :to="link.url"
-                >
-                  {{ link.label }}
-                </nuxt-link>
-              </li>
-            </ul>
+            <global-link-list
+              heading="Highlights"
+              :list="links.footer.highlights"
+            />
           </div>
           <div>
-            <h3 class="uppercase">
-              About me
-            </h3>
-            <ul role="list" class="p0 list-none">
-              <li v-for="(link, index) in links.footer.about" :key="`footer-link--${index}`" role="listitem">
-                <nuxt-link
-                  text-white
-                  :to="link.url"
-                >
-                  {{ link.label }}
-                </nuxt-link>
-              </li>
-            </ul>
+            <global-link-list
+              heading="About me"
+              :list="links.footer.about"
+            />
           </div>
         </div>
       </div>
       <div>
-        <ul class="inline-list" role="list">
-          <li v-for="(link, index) in links.footer.social" :key="`social-link--${index}`" role="listitem">
-            <nuxt-link :to="link.url">
-              <component :is="link.icon" />
-              <span class="sr-only">{{ link.label }}</span>
-            </nuxt-link>
-          </li>
-        </ul>
+        <global-link-list
+          :list="links.footer.social"
+          :inline="true"
+        />
       </div>
 
       <p class="flex justify-center opacity90">
@@ -133,23 +85,9 @@ export default {
     md:col-end-4
   ;
 }
-.footer-subgrid ul li {
-  @apply m-y-5;
-}
 
-.inline-list {
-  @apply
-    flex
-    flex-row
-    gap-12
-    p0
-    list-none
-}
-p {
-  @apply
-    m-y-5
-    first:m-t-0;
-  ;
+:deep(p) {
+  @apply m-y-5 first:m-t-0;
 }
 .icon {
   @apply w-6 h-6;
