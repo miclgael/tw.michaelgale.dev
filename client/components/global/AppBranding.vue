@@ -7,7 +7,7 @@ withDefaults(defineProps<{ zIndex?: number }>(), {
 <template>
   <div class="logo">
     <span aria-hidden="true" data-brace="{" />
-    <nuxt-link to="/" class="inline-flex text-white no-underline">
+    <nuxt-link to="/" class="logo__link inline-flex text-white no-underline">
       <span>Michael</span>
       <span>Gale</span>
     </nuxt-link>
