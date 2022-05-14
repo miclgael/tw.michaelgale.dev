@@ -31,8 +31,8 @@ const ulClass = props.inline ? 'inline-list' : 'p-0 list-none'
     </h3>
     <ul role="list" :class="ulClass">
       <li v-for="(link, index) in list" :key="`footer-link--${index}`" role="listitem">
-        <nuxt-link :class="{'text-white': !!link.icon}" :to="link.url">
-          <component :is="link.icon" v-if="!!link.icon" />
+        <nuxt-link :class="{'text-white': !(!!link.icon)}" :to="link.url">
+          <component :is="link.icon" v-if="!!link.icon" class="icon" />
           <span :class="{'sr-only': !!link.icon }">{{ link.label }}</span>
         </nuxt-link>
       </li>
@@ -43,13 +43,5 @@ const ulClass = props.inline ? 'inline-list' : 'p-0 list-none'
 <style lang="postcss" scoped>
 ul li {
   @apply m-y-5;
-}
-.inline-list {
-  @apply
-    flex
-    flex-row
-    gap-12
-    p0
-    list-none;
 }
 </style>
