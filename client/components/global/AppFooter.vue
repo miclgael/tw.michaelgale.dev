@@ -46,13 +46,14 @@ export default {
               :list="links.footer.about"
             />
           </div>
+          <div>
+            <global-link-list
+              heading="Socials"
+              :list="links.footer.social"
+              :inline="true"
+            />
+          </div>
         </div>
-      </div>
-      <div>
-        <global-link-list
-          :list="links.footer.social"
-          :inline="true"
-        />
       </div>
 
       <p class="flex justify-center opacity90">
@@ -70,6 +71,7 @@ export default {
     sm:grid-cols-2
     sm:gap-12
     md:grid-cols-[3fr_1fr_1fr]
+    lg:grid-cols-[2fr_2fr]
   ;
 }
 
@@ -83,6 +85,7 @@ export default {
     md:grid-cols-2
     md:col-start-2
     md:col-end-4
+    lg:grid-cols-3
   ;
 }
 
