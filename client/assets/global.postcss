@@ -22,3 +22,22 @@ a:not(.logo__link):hover {
   -webkit-text-fill-color: transparent;
   -moz-text-fill-color: transparent;
 }
+
+
+.skip-link {
+  white-space: nowrap;
+  top: 0;
+  position: fixed;
+  left: 50%;
+  margin: 1em auto 1em -72px;
+  opacity: 0;
+}
+
+.inline-list {
+  @apply
+    flex
+    flex-row
+    gap-12
+    p0
+    list-none;
+}

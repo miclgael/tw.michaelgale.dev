@@ -2,7 +2,11 @@ export default function () {
   // Todo, this doesn't need to be reactive...
   return useState('links', () => ({
     main: [
-      { url: '/', label: 'Home' }
+      { url: '/portfolio', label: 'Portfolio' },
+      { url: '/resume', label: 'Resumé' },
+      { url: '/projects', label: 'Projects' },
+      { url: '/about', label: 'About' },
+      { url: '/contact', label: 'Get in Contact', cta: true }
     ],
     footer: {
       highlights: [

@@ -44,12 +44,4 @@ const ulClass = props.inline ? 'inline-list' : 'p-0 list-none'
 ul li {
   @apply m-y-5;
 }
-.inline-list {
-  @apply
-    flex
-    flex-row
-    gap-12
-    p0
-    list-none;
-}
 </style>
