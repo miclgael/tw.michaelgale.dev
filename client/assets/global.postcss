@@ -1,0 +1,24 @@
+html {
+  @apply fira-sans;
+  font-size: 16px;
+  word-spacing: 1px;
+  -ms-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  box-sizing: border-box;
+}
+
+a:not(.logo__link) {
+  @apply underline;
+}
+
+a:not(.logo__link):hover {
+  background-color: rgb(74 95 226);
+  color: rgb(74 95 226);
+  @apply gradient-fill;
+  background-size: 100%;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  -moz-text-fill-color: transparent;
+}
