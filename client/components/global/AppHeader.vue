@@ -1,7 +1,7 @@
 <template>
   <header>
     <div class="inside">
-      <div class="flex gap12">
+      <div class="flex gap-12">
         <global-app-branding />
         <global-app-navigation />
       </div>
