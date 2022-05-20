@@ -42,6 +42,6 @@ const ulClass = props.inline ? 'inline-list' : 'p-0 list-none'
 
 <style lang="postcss" scoped>
 ul li {
-  @apply m-y-5;
+  @apply my-5;
 }
 </style>

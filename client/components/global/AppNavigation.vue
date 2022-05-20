@@ -3,8 +3,8 @@ const links:any = useNavigation()
 </script>
 
 <template>
-  <nav class="flex items-center w-100%">
-    <ul role="list" class="inline-list justify-start w-100%">
+  <nav class="flex items-center w-full">
+    <ul role="list" class="inline-list justify-start w-full">
       <li
         v-for="(link, index) in links.main"
         :key="`link--${index}`"
@@ -28,7 +28,6 @@ const links:any = useNavigation()
 }
 .link--cta {
   white-space: nowrap;
-  font-family: "Fira Sans", sans-serif;
   font-size: 1.125rem;
   color: #4a5fe2;
   background-color: #fcfafa;
@@ -36,8 +35,13 @@ const links:any = useNavigation()
   border: 3px solid #4a5fe2;
   text-decoration: none;
   padding: .5rem 2rem;
-  transition: background-color .3s ease,color .3s ease .01s;
   z-index: 3;
   height: 3rem;
+  text-decoration: none;
+}
+.link--cta:hover {
+  background-color: #4a5fe2;
+  border: 3px solid #344cde;
+  color: #fff;
 }
 </style>

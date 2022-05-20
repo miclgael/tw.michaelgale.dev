@@ -15,7 +15,7 @@ export default {
 </script>
 <template>
   <footer class="bg-black text-white py-12">
-    <div class="inside m-y-5">
+    <div class="inside my-5">
       <global-app-branding :z-index="0" />
     </div>
     <div class="inside">
@@ -64,7 +64,6 @@ export default {
 </template>
 
 <style lang="postcss" scoped>
-
 .footer-grid {
   @apply
     grid
@@ -90,7 +89,7 @@ export default {
 }
 
 :deep(p) {
-  @apply m-y-5 first:m-t-0;
+  @apply my-5 first:mt-0;
 }
 
 </style>
