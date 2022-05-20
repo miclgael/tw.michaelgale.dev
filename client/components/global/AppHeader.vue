@@ -11,15 +11,15 @@
 
 <style lang="postcss" scoped>
 header {
-  padding: 1em 0;
-  transition: .3s ease;
-  background-color: rgba(252,250,250,.89);
-  border-bottom: 1px solid rgba(238,231,231,.302);
-  -webkit-backdrop-filter: blur(2px);
-  backdrop-filter: blur(2px);
-  position: -webkit-sticky;
-  position: sticky;
-  top: 0;
-  z-index: 100;
+@apply
+  py-4
+  bg-white/90
+  border-b
+  border-solid
+  border-b-gray-500/10
+  backdrop-blur-md
+  sticky
+  top-0
+  z-50;
 }
 </style>
