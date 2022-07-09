@@ -7,9 +7,8 @@ export default {
   },
   setup () {
     const links = useNavigation()
-    const content = useContent()
     const global = useGlobalStore()
-    return { links, content, global }
+    return { links, global }
   }
 }
 </script>
@@ -21,8 +20,8 @@ export default {
     <div class="inside">
       <div class="footer-grid">
         <div class="footer-blurb">
-          <!-- eslint-disable vue/no-v-html -->
-          <div v-html="content.footer" />
+          <p>An award-winning full-stack web developer focused on making things fast, resilient and inclusive.</p>
+          <p>I'm a computer-science hobbyist, part-time musician and proud co-parent to two adorable kittens <span class="text-sm">(Mow-mow and Little Moose 💕)</span>.</p>
           <p>
             If you want to work together - cool! Unfortunately, I'm all booked out
             for Q{{ global.yearQuarter.now }}, but I am accepting
