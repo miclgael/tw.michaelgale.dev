@@ -80,6 +80,7 @@ export default defineNuxtConfig({
   buildModules: [
     '@nuxtjs/eslint-module',
     '@nuxtjs/tailwindcss',
+    '@nuxt/content',
     ['unplugin-icons/nuxt', {
       // experimental
       autoInstall: true
@@ -89,5 +90,12 @@ export default defineNuxtConfig({
   tailwindcss: {
     jit: true,
     cssPath: '~/assets/tailwind.postcss'
+  },
+  content: {
+    // https://content.nuxtjs.org/api/configuration
+    highlight: {
+      // Theme used in all color schemes.
+      theme: 'github-light'
+    }
   }
 })
