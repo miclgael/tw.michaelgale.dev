@@ -18,28 +18,36 @@ withDefaults(defineProps<{ zIndex?: number }>(), {
 <style lang="postcss" scoped>
 .logo {
   z-index: v-bind(zIndex);
-  @apply:
+  @apply
+    plex-mono
     bg-black/90
     inline-flex
     text-2xl
     italic
-    whitespace-no-wrap
+    whitespace-nowrap
     text-white
-    relative
-    plex-mono
-    before:-z-1
-    before:absolute
-    before:content-none
-    before:top-0
-    before:right-0
-    before:bottom-0
-    before:left-0
-    before:opacity-0
-    before:transition-opacity
-    before:duration-300
-    before:gradient-fill
-    hover:before:opacity-100
-    hover:[text-shadow:1px_1px_1px_#4d4d4d];
+    relative;
+}
+
+.logo:before {
+  z-index: -1;
+  @apply
+    absolute
+    content-['']
+    top-0
+    right-0
+    bottom-0
+    left-0
+    opacity-0
+    transition-opacity
+    duration-300
+    gradient-fill
+  ;
+}
+.logo:hover:before {
+  @apply
+    opacity-100
+    text-shadow;
 }
 
 /* Responsive logo */

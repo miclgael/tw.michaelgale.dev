@@ -7,22 +7,21 @@ export default {
   },
   setup () {
     const links = useNavigation()
-    const content = useContent()
     const global = useGlobalStore()
-    return { links, content, global }
+    return { links, global }
   }
 }
 </script>
 <template>
   <footer class="bg-black text-white py-12">
-    <div class="inside m-y-5">
+    <div class="inside my-5">
       <global-app-branding :z-index="0" />
     </div>
     <div class="inside">
       <div class="footer-grid">
         <div class="footer-blurb">
-          <!-- eslint-disable vue/no-v-html -->
-          <div v-html="content.footer" />
+          <p>An award-winning full-stack web developer focused on making things fast, resilient and inclusive.</p>
+          <p>I'm a computer-science hobbyist, part-time musician and proud co-parent to two adorable kittens <span class="text-sm">(Mow-mow and Little Moose 💕)</span>.</p>
           <p>
             If you want to work together - cool! Unfortunately, I'm all booked out
             for Q{{ global.yearQuarter.now }}, but I am accepting
@@ -46,13 +45,14 @@ export default {
               :list="links.footer.about"
             />
           </div>
+          <div>
+            <global-link-list
+              heading="Socials"
+              :list="links.footer.social"
+              :inline="true"
+            />
+          </div>
         </div>
-      </div>
-      <div>
-        <global-link-list
-          :list="links.footer.social"
-          :inline="true"
-        />
       </div>
 
       <p class="flex justify-center opacity90">
@@ -63,13 +63,13 @@ export default {
 </template>
 
 <style lang="postcss" scoped>
-
 .footer-grid {
   @apply
     grid
     sm:grid-cols-2
     sm:gap-12
     md:grid-cols-[3fr_1fr_1fr]
+    lg:grid-cols-[2fr_2fr]
   ;
 }
 
@@ -83,16 +83,12 @@ export default {
     md:grid-cols-2
     md:col-start-2
     md:col-end-4
+    lg:grid-cols-3
   ;
 }
 
 :deep(p) {
-  @apply m-y-5 first:m-t-0;
+  @apply my-5 first:mt-0;
 }
-.icon {
-  @apply w-6 h-6;
-}
-.icon--inline {
-  @apply inline-block m-r-4;
-}
+
 </style>

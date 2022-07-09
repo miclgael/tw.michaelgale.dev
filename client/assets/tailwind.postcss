@@ -1,0 +1,88 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  /* Document */
+  html {
+    @apply fira-sans;
+    font-size: 16px;
+    word-spacing: 1px;
+    -ms-text-size-adjust: 100%;
+    -webkit-text-size-adjust: 100%;
+    -moz-osx-font-smoothing: grayscale;
+    -webkit-font-smoothing: antialiased;
+    box-sizing: border-box;
+  }
+
+  /* Links */
+  a:not(.logo__link):not(.link--cta) {
+    @apply underline;
+  }
+
+  a:not(.logo__link):not(.link--cta):hover {
+    background-color: rgb(74 95 226);
+    color: rgb(74 95 226);
+    background-size: 100%;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    -moz-text-fill-color: transparent;
+    @apply gradient-fill;
+  }
+  /* a11y Helpers */
+  .skip-link {
+    white-space: nowrap;
+    top: 0;
+    position: fixed;
+    left: 50%;
+    margin: 1em auto 1em -72px;
+    opacity: 0;
+  }
+
+  /* Lists */
+  .inline-list {
+    @apply
+      flex
+      flex-row
+      gap-7
+      p-0
+      list-none;
+  }
+
+  /* Icons */
+  .icon {
+    @apply w-6 h-6;
+  }
+  .icon--inline {
+    @apply inline-block mr-4;
+  }
+
+  /* Layout */
+  .inside {
+    @apply 
+      px-8
+      max-w-screen-2xl
+      m-auto;
+  }
+}
+
+@layer components {
+  /* Typography */
+  .plex-mono { 
+    font-family: 'IBM Plex Mono', monospace; 
+    font-weight: normal; 
+  }
+  .fira-sans { 
+    font-family: 'Fira Sans', sans-serif; 
+    font-weight: 400; 
+  }
+  .gradient-fill { 
+    background-image: linear-gradient(to right, rgb(74, 95, 226), #0ff);
+  }
+}
+
+@layer utilities {
+  .text-shadow {
+    text-shadow: 1px 1px 1px #4d4d4d;
+  }
+}

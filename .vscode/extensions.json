@@ -1,12 +1,12 @@
 {
   "recommendations": [
-    "johnsoncodehk.volar",
     "bradlc.vscode-tailwindcss",
     "stylelint.vscode-stylelint",
     "sdras.vue-vscode-snippets",
     "antfu.unocss",
     "jeremyljackson.vs-docblock",
-    "cpylua.language-postcss"
+    "cpylua.language-postcss",
+    "Vue.volar"
   ],
   "unwantedRecommendations": [
     "octref.vetur"

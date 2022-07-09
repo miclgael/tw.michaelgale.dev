@@ -1,7 +1,7 @@
 <template>
   <main>
     <global-app-header />
-    <section class="min-h-40vh">
+    <section class="min-h-max">
       <div class="inside">
         <slot />
       </div>
@@ -11,7 +11,6 @@
 </template>
 
 <script>
-import '@/assets/global.postcss'
 export default {
   name: 'DefaultLayout'
 }
